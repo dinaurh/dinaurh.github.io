@@ -34,8 +34,15 @@ h1 {
 
 
 .banner {
-  height: 220px;   /* change this number */
+  padding: 40px 20px;
 }
+
+.banner img {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
 
 
 /* Navigation over image */
