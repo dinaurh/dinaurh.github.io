@@ -316,5 +316,29 @@ main.content {
   display: block;
 }
 
+/* publication boxes */
+.pub-box {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px 18px;
+  margin: 15px 0 25px;
+  background-color: #fafafa;
+}
+
+/* publication links (PDF / Repository) */
+.pub-links a {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: #000;
+}
+
+.pub-links a:hover {
+  background-color: #f0f0f0;
+}
 
 
