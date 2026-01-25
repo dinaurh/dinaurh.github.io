@@ -46,24 +46,45 @@ h1 {
 
 
 
-
-
-/* Navigation over image */
+/* transparent nav overlay, centered */
 .nav-overlay {
   position: absolute;
-  bottom: 20px;   /* move up/down */
-  left: 20px;     /* move left/right */
-  background: rgba(255, 255, 255, 0.85);
-  padding: 10px 15px;
-  border-radius: 4px;
+  top: 20px;  /* distance from top of banner; adjust if needed */
+  left: 50%;
+  transform: translateX(-50%);  /* center horizontally */
+  display: flex;
+  align-items: center;
+  gap: 20px;   /* space between links */
+  z-index: 2;
+  background: none;  /* no background */
+  padding: 0;
 }
 
+/* all nav links white */
 .nav-overlay a {
-  margin-right: 15px;
+  color: #fff;
   text-decoration: none;
-  color: #000;
   font-weight: 500;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5); /* subtle contrast over image */
 }
+
+.nav-overlay a:hover {
+  text-decoration: underline;
+}
+
+/* nav title (Dinah Hartmann) bigger and white */
+.nav-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.nav-title:hover {
+  text-decoration: underline;
+}
+
+
 
 /* spacing under banner */
 .banner-spacer {
