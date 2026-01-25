@@ -348,3 +348,35 @@ main.content {
 }
 
 
+/* section header with image */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.section-header-text {
+  flex: 1;
+}
+
+.section-header img {
+  max-width: 180px;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* stack nicely on small screens */
+@media (max-width: 700px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-header img {
+    max-width: 100%;
+  }
+}
+
+
