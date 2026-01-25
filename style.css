@@ -60,6 +60,10 @@ h1 {
   padding: 0;
 }
 
+.nav-overlay {
+  white-space: nowrap;
+  max-width: 100%;
+}
 /* Dinah Hartmann — largest */
 .nav-title {
   font-size: 1.6rem;          /* biggest text */
