@@ -49,7 +49,7 @@ h1 {
 /* transparent nav overlay at bottom center */
 .nav-overlay {
   position: absolute;
-  bottom: 20px;               /* distance from bottom of banner */
+  bottom: 5px;               /* distance from bottom of banner */
   left: 50%;                  /* center horizontally */
   transform: translateX(-50%);
   display: flex;
