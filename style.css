@@ -46,43 +46,46 @@ h1 {
 
 
 
-/* transparent nav overlay, centered */
+/* transparent nav overlay at bottom center */
 .nav-overlay {
   position: absolute;
-  top: 20px;  /* distance from top of banner; adjust if needed */
-  left: 50%;
-  transform: translateX(-50%);  /* center horizontally */
+  bottom: 20px;               /* distance from bottom of banner */
+  left: 50%;                  /* center horizontally */
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 20px;   /* space between links */
+  gap: 25px;                  /* space between links */
   z-index: 2;
-  background: none;  /* no background */
+  background: none;           /* transparent */
   padding: 0;
 }
 
-/* all nav links white */
-.nav-overlay a {
+/* Dinah Hartmann — largest */
+.nav-title {
+  font-size: 1.6rem;          /* biggest text */
+  font-weight: 700;
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5); /* subtle contrast over image */
-}
-
-.nav-overlay a:hover {
-  text-decoration: underline;
-}
-
-/* nav title (Dinah Hartmann) bigger and white */
-.nav-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5); /* subtle contrast */
 }
 
 .nav-title:hover {
   text-decoration: underline;
 }
+
+/* remaining links — smaller but still visible */
+.nav-overlay a:not(.nav-title) {
+  font-size: 1.1rem;          /* slightly smaller */
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.nav-overlay a:not(.nav-title):hover {
+  text-decoration: underline;
+}
+
 
 
 
