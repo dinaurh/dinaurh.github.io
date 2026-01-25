@@ -34,6 +34,24 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+.banner {
+  position: fixed;        /* fixes the banner to the top */
+  top: 0;
+  left: 0;
+  width: 100%;            /* full width */
+  height: 28vh;           /* adjust as needed */
+  min-height: 200px;
+  max-height: 300px;
+  overflow: hidden;
+  z-index: 1000;          /* ensures it stays above other content */
+}
+
+/* banner image scaling */
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;    /* entire image visible */
+}
 
 .banner img {
   max-width: 100%;
