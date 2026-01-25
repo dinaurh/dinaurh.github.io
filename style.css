@@ -90,7 +90,40 @@ h1 {
   text-decoration: underline;
 }
 
+/* title row */
+.nav-title-row {
+  margin-bottom: 6px;
+}
 
+/* Dinah Hartmann — largest */
+.nav-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* links row */
+.nav-links-row {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+
+/* nav links */
+.nav-links-row a {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.nav-links-row a:hover,
+.nav-title:hover {
+  text-decoration: underline;
+}
 
 
 /* spacing under banner */
