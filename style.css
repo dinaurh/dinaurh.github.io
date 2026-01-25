@@ -124,11 +124,24 @@ h1 {
   margin-bottom: 15px;
 }
 
+/* footer buttons */
 .footer-links a {
-  margin-right: 12px;
+  display: inline-block;
+  margin: 6px 10px 6px 0;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fafafa;
+  color: #000;
+  font-size: 0.85rem;
   text-decoration: none;
-  color: #0366d6;
 }
+
+.footer-links a:hover {
+  background-color: #f0f0f0;
+  border-color: #aaa;
+}
+
 
 .footer-links a:hover {
   text-decoration: underline;
@@ -150,4 +163,41 @@ h1 {
 .back-to-top:hover {
   text-decoration: underline;
 }
+
+
+
+/* profile header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+/* profile image */
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ensure name spacing stays tight */
+.profile-text h1 {
+  margin: 0;
+}
+
+/* mobile-friendly stacking */
+@media (max-width: 600px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 
