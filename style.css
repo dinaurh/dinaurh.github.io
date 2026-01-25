@@ -362,7 +362,8 @@ main.content {
 }
 
 .section-header img {
-  max-width: 180px;
+  max-width: 500px;    /* maximum width */
+  max-height: 350px;
   height: auto;
   border-radius: 4px;
 }
