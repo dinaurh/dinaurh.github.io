@@ -60,6 +60,48 @@ h1 {
   font-weight: 500;
 }
 
+/* spacing under banner */
+.banner-spacer {
+  height: 30px;
+}
+
+/* main content */
+.content {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+  line-height: 1.6;
+}
+
+/* subtitle under name */
+.subtitle {
+  color: #666;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+/* link buttons */
+.links {
+  margin-top: 30px;
+}
+
+.links a {
+  display: inline-block;
+  margin: 6px 10px 6px 0;
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.links a:hover {
+  background-color: #f2f2f2;
+}
+
+
 .nav-overlay a:hover {
   text-decoration: underline;
 }
