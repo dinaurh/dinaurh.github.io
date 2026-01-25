@@ -264,3 +264,41 @@ main.content {
   line-height: 1.6;
 }
 
+.banner {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+
+/* make banner height match the image */
+.banner {
+  position: fixed;   /* sticky at top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  overflow: visible; /* allow image to determine height */
+  display: flex;
+  justify-content: center;
+}
+
+/* banner image scales naturally */
+.banner img {
+  width: 100%;        /* stretch to full width */
+  height: auto;       /* natural height, keeps aspect ratio */
+  display: block;
+}
+
+/* nav overlay */
+.nav-overlay {
+  position: absolute;
+  top: 20px;          /* or bottom: 20px if you like */
+  left: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 10px 15px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
