@@ -341,4 +341,10 @@ main.content {
   background-color: #f0f0f0;
 }
 
+/* offset anchor to account for fixed banner */
+.top-anchor {
+  position: relative;
+  top: -200px;   /* adjust to banner height */
+}
+
 
