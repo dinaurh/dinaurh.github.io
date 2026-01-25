@@ -124,6 +124,21 @@ gap: 6px;                 /* vertical spacing between rows */
 .nav-title:hover {
   text-decoration: underline;
 }
+/* horizontal divider under name */
+.nav-divider-horizontal {
+  width: 60%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.6);
+  margin: 6px 0 8px;
+}
+
+/* vertical dividers between nav links */
+.nav-links-row a:not(:last-child)::after {
+  content: "|";
+  margin-left: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+}
 
 
 /* spacing under banner */
