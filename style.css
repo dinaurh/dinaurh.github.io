@@ -226,42 +226,7 @@ h1 {
   }
 }
 
-/* nav overlay */
-.nav-overlay {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 10px 15px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  z-index: 2;
-}
 
-/* big grey home/title */
-.nav-title {
-  font-size: 1.25rem;  /* bigger than other nav links */
-  font-weight: 600;
-  color: #666;         /* grey color */
-  text-decoration: none;
-}
-
-.nav-title:hover {
-  text-decoration: underline;
-}
-
-/* regular nav links */
-.nav-overlay a:not(.nav-title) {
-  font-size: 0.95rem;
-  color: #0366d6;
-  text-decoration: none;
-}
-
-.nav-overlay a:not(.nav-title):hover {
-  text-decoration: underline;
-}
 
 main.content {
   padding-top: 28vh;  /* matches banner height */
