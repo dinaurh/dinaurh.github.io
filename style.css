@@ -1453,3 +1453,41 @@ th {
   padding-top: 0 !important;
   border-top: 0;
 }
+
+/* Flush top banners */
+.banner {
+  display: block;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0;
+  font-size: 0;
+  border: 0;
+  overflow: hidden;
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0;
+}
+
+/* Navigation panel background */
+.site-nav {
+  margin: 0 !important;
+  border: 0;
+  box-shadow: none;
+
+  background-image: url("BannerGrad.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+/* No gap between the two JPG banners */
+.banner + .banner {
+  margin-top: 0 !important;
+}
