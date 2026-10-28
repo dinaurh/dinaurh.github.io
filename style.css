@@ -94,8 +94,8 @@ border-bottom: none;
   background-position: center;
   background-repeat: no-repeat;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+border-bottom: none;
+   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 /* Equal-width glass buttons */
