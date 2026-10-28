@@ -1073,3 +1073,20 @@ th {
 .banner + .site-nav {
   margin-top: -2px !important;
 }
+/* Pull the nav up 1px so its image paints over the seam */
+header.banner {
+  margin-bottom: -1px !important;
+}
+
+nav.site-nav {
+  margin-top: 0 !important;
+  position: sticky;
+  z-index: 1000;
+}
+
+header.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
