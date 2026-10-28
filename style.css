@@ -1244,3 +1244,96 @@ th {
     transform: none;
   }
 }
+
+/* Compact Liquid Glass repository card */
+.resource-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 440px;
+  min-width: 0;
+  min-height: 0;
+  padding: 18px 20px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    0 8px 24px rgba(0, 0, 0, 0.12);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.resource-card:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-3px);
+}
+
+.resource-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.resource-icon {
+  width: 21px;
+  height: 21px;
+  flex-shrink: 0;
+}
+
+.resource-card h3 {
+  margin: 0 0 6px;
+  color: #ffffff;
+  font-size: 1.12rem;
+  line-height: 1.4;
+}
+
+.resource-card p {
+  margin: 8px 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.resource-card .resource-authors {
+  margin: 0 0 8px;
+  color: #c3c9db;
+  font-size: 0.82rem;
+}
+
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+  padding-top: 8px;
+
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Keep the card compact on mobile too */
+@media (max-width: 600px) {
+  .resource-card {
+    max-width: 100%;
+    padding: 18px;
+  }
+}
