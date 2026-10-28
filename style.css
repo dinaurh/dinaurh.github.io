@@ -1082,3 +1082,165 @@ th {
   font-size: 0.95rem;
 }
 
+
+/* =================================
+   RESOURCES PAGE
+   ================================= */
+
+.resource-section {
+  margin-top: 34px;
+}
+
+.resource-section > h2 {
+  margin-bottom: 18px;
+}
+
+/* Responsive grid for repository cards */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* Square Liquid Glass repository card */
+.resource-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 1 / 1;
+  min-width: 0;
+  padding: 24px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    0 8px 24px rgba(0, 0, 0, 0.12);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.resource-card:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-3px);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 12px 30px rgba(0, 0, 0, 0.20);
+}
+
+.resource-card:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 4px;
+}
+
+.resource-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.resource-type {
+  color: #bfc8df;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.resource-icon {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.9;
+}
+
+.resource-card h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.resource-card p {
+  font-size: 0.91rem;
+  line-height: 1.65;
+}
+
+.resource-card .resource-authors {
+  margin: 0 0 12px;
+  color: #c3c9db;
+  font-size: 0.83rem;
+}
+
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 18px;
+
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Other resources and GIF */
+.resource-visual {
+  overflow: hidden;
+}
+
+.resource-gif {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin: 20px auto 0;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Smaller screens */
+@media (max-width: 600px) {
+  .resource-card {
+    aspect-ratio: auto;
+    min-height: 320px;
+    padding: 21px;
+  }
+
+  .resource-section {
+    margin-top: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resource-card {
+    transition: none;
+  }
+
+  .resource-card:hover {
+    transform: none;
+  }
+}
