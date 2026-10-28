@@ -46,9 +46,10 @@ body {
   height: auto;
 }
 
+
 /* ========================================
-   STICKY NAVIGATION BAR
-   Liquid Glass appearance
+   LIQUID GLASS NAVIGATION
+   Equal-width, all-caps buttons
    ======================================== */
 
 .site-nav {
@@ -65,35 +66,39 @@ body {
   width: 100%;
   padding: 12px 16px;
 
-  /* Translucent glass background */
   background: rgba(32, 34, 49, 0.82);
-
   -webkit-backdrop-filter: blur(18px) saturate(160%);
   backdrop-filter: blur(18px) saturate(160%);
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* Individual navigation buttons */
+/* Equal-width glass buttons */
 
 .site-nav a {
   position: relative;
-  display: inline-block;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  padding: 8px 16px;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 190px;
+  min-height: 42px;
+
+  padding: 8px 10px;
 
   color: #ffffff;
   text-decoration: none;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.045em;
 
-  font-size: 0.9rem;
-  font-weight: 500;
-  line-height: 1.5;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
 
-  /* Layered glass surface */
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.16),
@@ -107,7 +112,6 @@ body {
   -webkit-backdrop-filter: blur(12px) saturate(150%);
   backdrop-filter: blur(12px) saturate(150%);
 
-  /* Highlights, depth and soft shadows */
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.22),
     inset 0 -1px 0 rgba(255, 255, 255, 0.04),
@@ -120,7 +124,7 @@ body {
     transform 0.25s ease;
 }
 
-/* Thin reflective highlight */
+/* Reflective glass highlight */
 
 .site-nav a::before {
   content: "";
@@ -133,7 +137,6 @@ body {
 
   background: rgba(255, 255, 255, 0.45);
   opacity: 0.7;
-
   pointer-events: none;
 }
 
@@ -166,6 +169,26 @@ body {
   outline: 2px solid rgba(255, 255, 255, 0.85);
   outline-offset: 3px;
 }
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+  .site-nav {
+    gap: 6px;
+    padding: 9px 8px;
+  }
+
+  .site-nav a {
+    flex: 1 1 28%;
+    max-width: none;
+    min-height: 40px;
+    padding: 7px 5px;
+    font-size: 0.68rem;
+    letter-spacing: 0.025em;
+    border-radius: 12px;
+  }
+}
+
 
 /* ========================================
    OLD BANNER NAVIGATION
