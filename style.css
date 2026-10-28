@@ -215,7 +215,25 @@ border-bottom: none;
     border-radius: 12px;
   }
 }
+.banner {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  box-shadow: none;
+}
 
+.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.site-nav {
+  margin-top: 0;
+  border-top: none;
+}
 
 /* ========================================
    OLD BANNER NAVIGATION
