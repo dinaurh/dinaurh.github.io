@@ -1043,4 +1043,5 @@ th {
     transform: none;
   }
 }
-body { background-color: red !important; }
+body, .banner, .site-nav { background-color: red !important; }
+
