@@ -1043,5 +1043,5 @@ th {
     transform: none;
   }
 }
-body, .banner, .site-nav { background-color: red !important; }
-
+.banner { margin-bottom: -1px; }
+.site-nav { margin-top: -1px; padding-top: 1px; }
