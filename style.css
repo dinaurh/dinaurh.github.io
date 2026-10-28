@@ -1045,3 +1045,27 @@ th {
 }
 .banner { margin-bottom: -1px; }
 .site-nav { margin-top: -1px; padding-top: 1px; }
+
+
+/* Close sub-pixel seams: each element is pulled up 2px under the previous one.
+   Later elements paint over earlier ones, so the overlap is invisible. */
+.banner + .banner,
+.banner + .site-nav {
+  margin-top: -2px;
+}
+
+/* Make sure nothing inside the banner adds its own spacing */
+.banner,
+.banner a,
+.banner picture {
+  display: block;
+  line-height: 0;
+  font-size: 0;
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
