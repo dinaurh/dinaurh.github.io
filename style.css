@@ -1062,3 +1062,23 @@ th {
   }
 }
 
+
+/* Publications page */
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.profile-links a {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.section-note {
+  color: #c3c7d6;
+  font-size: 0.95rem;
+}
+
