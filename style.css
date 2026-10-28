@@ -29,7 +29,6 @@ body {
 
 .banner {
   display: block;
-  position: relative;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -37,7 +36,7 @@ body {
   overflow: hidden;
   line-height: 0;
   font-size: 0;
-  box-shadow: none;
+  background-color: #202231;
 }
 
 .banner img {
@@ -47,13 +46,11 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  vertical-align: top;
 }
 
-/* 1px overlap removes sub-pixel seams between stacked banners / nav */
-.banner + .banner,
-.banner + .site-nav {
-  margin-top: -1px;
+/* Overlap stacked banners slightly so no background line can show */
+.banner + .banner {
+  margin-top: -2px;
 }
 
 /* ========================================
@@ -73,18 +70,18 @@ body {
   gap: 10px;
 
   width: 100%;
+  margin: 0;
   padding: 12px 16px;
-
-  /* Image keeps its proportions (cover) instead of stretching with nav height.
-     Solid fallback colour prevents any colour gap. */
-  background-color: #202231;
-  background-image: url("BannerGrad.jpg");
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-
   border: none;
   box-shadow: none;
+
+  /* Image scales with page WIDTH, like the banners above it,
+     and is pinned to the top so it lines up with the picture. */
+  background-color: #202231;
+  background-image: url("BannerGrad.jpg");
+  background-size: 100% auto;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
 .site-nav a {
