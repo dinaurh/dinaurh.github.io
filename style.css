@@ -1069,3 +1069,7 @@ th {
   height: auto;
   vertical-align: top;
 }
+.banner + .banner,
+.banner + .site-nav {
+  margin-top: -2px !important;
+}
