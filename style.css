@@ -1422,3 +1422,34 @@ th {
   border: none;
   box-shadow: none;
 }
+
+/* Flush, responsive top banners */
+
+.banner {
+  display: block;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0;
+  overflow: hidden;
+  line-height: 0;
+  font-size: 0;
+  box-shadow: none;
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0;
+  vertical-align: top;
+}
+
+/* Remove spacing between consecutive banners */
+.banner + .banner {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: 0;
+}
