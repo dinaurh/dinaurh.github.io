@@ -1013,3 +1013,52 @@ th {
   }
 }
 
+/* Presentation entries */
+
+.entry-authors {
+  color: #d9dceb;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.presentation-venues {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.presentation-venues li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  padding: 12px 0;
+  margin: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.presentation-venues li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.presentation-venues .venue-name {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.presentation-venues .venue-date {
+  color: #bfc4d6;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 600px) {
+  .presentation-venues li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+}
+
