@@ -1043,3 +1043,4 @@ th {
     transform: none;
   }
 }
+body { background-color: red !important; }
