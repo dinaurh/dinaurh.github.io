@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Communication – Dinah Hartmann</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Divider-line layout (overrides the boxed .glass-entry look).
+       Move this into style.css once you're happy with it. -->
+  <style>
+    .entry {
+      background: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      margin: 0;
+      padding: 1.25rem 0;
+    }
+
+    /* Thin line between consecutive entries in a section */
+    .entry + .entry {
+      border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+    }
+
+    .entry > h2:first-child {
+      margin-top: 0;
+    }
+
+    .entry > :last-child {
+      margin-bottom: 0;
+    }
+  </style>
 </head>
 
 <body id="top">
@@ -32,7 +59,7 @@
     <section class="page-section">
       <h1>Outreach Highlights</h1>
 
-      <article class="glass-entry">
+      <article class="entry">
         <h2>Harbour Porpoise Drone Research on ARTE</h2>
 
         <p>
@@ -53,11 +80,12 @@
             Watch full documentary ↗
           </a>
         </div>
+      </article>
 
-
+      <article class="entry">
         <h2>
           Feature in Sweden's leading nature magazine:
-          <em>Kampen för att rädda tumlaren</em>.
+          <em>Kampen för att rädda tumlaren</em>
         </h2>
 
         <div class="entry-links">
@@ -80,7 +108,7 @@
     <section class="page-section">
       <h1>Teaching</h1>
 
-      <article class="glass-entry">
+      <article class="entry">
         <h2>University of St Andrews</h2>
 
         <p class="entry-meta">
@@ -88,9 +116,9 @@
         </p>
 
         <ul>
-                    <li>
+          <li>
             <strong>MT2508 Statistical Inference — Lead Demonstrator (2026):</strong>
-Faciltated examples classes of up to 50 students.
+            Facilitated examples classes of up to 50 students.
           </li>
           <li>
             <strong>MT2508 Statistical Inference — Lead Demonstrator (2025):</strong>
@@ -103,7 +131,9 @@ Faciltated examples classes of up to 50 students.
             marked assignments and provided feedback.
           </li>
         </ul>
+      </article>
 
+      <article class="entry">
         <h2>Lund University</h2>
 
         <p class="entry-meta">
@@ -126,23 +156,30 @@ Faciltated examples classes of up to 50 students.
 
     <section class="page-section">
       <h1>Service Roles and Other</h1>
- <article class="glass-entry">
-        <h2>Conference organisation ECS 2026</h2>
+
+      <article class="entry">
+        <h2>Conference Organisation ECS 2026</h2>
 
         <p class="entry-meta">Dundee, Scotland · 2026</p>
 
         <p>
-Volunteering to help facilitate the European Cetacean Society Conference 2026 in Dundee. 
+          Volunteering to help facilitate the European Cetacean Society
+          Conference 2026 in Dundee.
         </p>
+      </article>
 
-        <h2>Woman in Ocean Science</h2>
+      <article class="entry">
+        <h2>Women in Ocean Science</h2>
 
         <p class="entry-meta">St Andrews, Scotland · 2025, 2026</p>
 
         <p>
-Presenting at the outreach event 'Women in Ocean Science' at the Scottish Oceans Institute.
+          Presenting at the outreach event 'Women in Ocean Science' at the
+          Scottish Oceans Institute.
         </p>
+      </article>
 
+      <article class="entry">
         <h2>Seminar Organisation</h2>
 
         <p class="entry-meta">
@@ -151,7 +188,9 @@ Presenting at the outreach event 'Women in Ocean Science' at the Scottish Oceans
         </p>
 
         <p>Seminar organisation and coordination.</p>
+      </article>
 
+      <article class="entry">
         <h2>Seal Rehabilitation Norden-Norddeich</h2>
 
         <p class="entry-meta">Norden, Germany · 2021</p>
@@ -173,7 +212,7 @@ Presenting at the outreach event 'Women in Ocean Science' at the Scottish Oceans
     <section class="page-section">
       <h1>Workshops</h1>
 
-      <article class="glass-entry">
+      <article class="entry">
         <h2>Data Flow into the Digital Twin Ocean: Integration of C/F-POD PAM Data</h2>
 
         <p class="entry-authors">
@@ -196,7 +235,7 @@ Presenting at the outreach event 'Women in Ocean Science' at the Scottish Oceans
     <section class="page-section">
       <h1>Talks and Seminars</h1>
 
-      <article class="glass-entry">
+      <article class="entry">
         <h2>
           Behavioural Classification of Harbour Porpoise Acoustic
           Detections for Density Estimation
@@ -219,7 +258,7 @@ Presenting at the outreach event 'Women in Ocean Science' at the Scottish Oceans
         </ul>
       </article>
 
-      <article class="glass-entry">
+      <article class="entry">
         <h2>The Probability of Detecting Harbour Porpoise Echolocation Clicks</h2>
 
         <p class="entry-authors">
@@ -247,7 +286,7 @@ Presenting at the outreach event 'Women in Ocean Science' at the Scottish Oceans
         </ul>
       </article>
 
-      <article class="glass-entry">
+      <article class="entry">
         <h2>
           Spatio-temporal Distribution of Harbour Porpoises around
           Kullaberg Nature Reserve
@@ -273,7 +312,8 @@ Presenting at the outreach event 'Women in Ocean Science' at the Scottish Oceans
 
     <section class="page-section">
       <h1>Posters</h1>
-      <article class="glass-entry">
+
+      <article class="entry">
         <h2>
           The Probability of Detecting Harbour Porpoise Echolocation Clicks
         </h2>
@@ -289,7 +329,7 @@ Presenting at the outreach event 'Women in Ocean Science' at the Scottish Oceans
         </p>
 
         <div class="entry-links">
-           <a href="https://www.researchgate.net/publication/407465973_Harbour_porpoise_Phocoena_phocoena_click_detectability_estimates_depend_on_behaviour_and_detection-classification_method"
+          <a href="https://www.researchgate.net/publication/407465973_Harbour_porpoise_Phocoena_phocoena_click_detectability_estimates_depend_on_behaviour_and_detection-classification_method"
              target="_blank" rel="noopener noreferrer">
             View citation ↗
           </a>
@@ -299,10 +339,7 @@ Presenting at the outreach event 'Women in Ocean Science' at the Scottish Oceans
         </div>
       </article>
 
-
-
-      
-      <article class="glass-entry">
+      <article class="entry">
         <h2>
           The Probability of Detecting Harbour Porpoise Echolocation Clicks
         </h2>
@@ -318,7 +355,7 @@ Presenting at the outreach event 'Women in Ocean Science' at the Scottish Oceans
         </p>
 
         <div class="entry-links">
-                     <a href="https://www.researchgate.net/publication/407466289_Harbour_porpoise_click_detection_probability_depends_on_behaviour_and_detection-classification_method"
+          <a href="https://www.researchgate.net/publication/407466289_Harbour_porpoise_click_detection_probability_depends_on_behaviour_and_detection-classification_method"
              target="_blank" rel="noopener noreferrer">
             View citation ↗
           </a>
@@ -328,7 +365,7 @@ Presenting at the outreach event 'Women in Ocean Science' at the Scottish Oceans
         </div>
       </article>
 
-      <article class="glass-entry">
+      <article class="entry">
         <h2>
           En Route to Standardisation: Porpoise Monitoring Using a Programmed UAV
         </h2>
@@ -354,7 +391,7 @@ Presenting at the outreach event 'Women in Ocean Science' at the Scottish Oceans
         </div>
       </article>
 
-      <article class="glass-entry">
+      <article class="entry">
         <h2>Harbour Porpoise Click Detection</h2>
 
         <p class="entry-authors">
@@ -367,7 +404,7 @@ Presenting at the outreach event 'Women in Ocean Science' at the Scottish Oceans
         </p>
 
         <div class="entry-links">
-                    <a href="https://www.researchgate.net/publication/407466099_How_to_convert_click_detections_into_density_with_varying_behaviour_environment_and_detector_performance"
+          <a href="https://www.researchgate.net/publication/407466099_How_to_convert_click_detections_into_density_with_varying_behaviour_environment_and_detector_performance"
              target="_blank" rel="noopener noreferrer">
             View citation ↗
           </a>
@@ -428,19 +465,14 @@ Presenting at the outreach event 'Women in Ocean Science' at the Scottish Oceans
           </svg>
         </a>
 
-<!-- Google Scholar -->
-<a
-  href="https://scholar.google.com/citations?user=1W9_pBoAAAAJ&hl=en&authuser=1"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Google Scholar"
-  title="Google Scholar"
->
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 3 1 9l11 6 9-5.45V17h2V9L12 3Z"/>
-    <path d="M5 12.2V17c3.8 3.1 10.2 3.1 14 0v-4.8l-7 3.8-7-3.8Z"/>
-  </svg>
-</a>
+        <a href="https://scholar.google.com/citations?user=1W9_pBoAAAAJ&amp;hl=en&amp;authuser=1"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Google Scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3 1 9l11 6 9-5.45V17h2V9L12 3Z"/>
+            <path d="M5 12.2V17c3.8 3.1 10.2 3.1 14 0v-4.8l-7 3.8-7-3.8Z"/>
+          </svg>
+        </a>
 
         <a href="https://github.com/dinaurh"
            target="_blank" rel="noopener noreferrer"
