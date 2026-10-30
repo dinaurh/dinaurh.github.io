@@ -34,6 +34,46 @@
       margin-bottom: 0;
     }
 
+    /* ---------- Teaching: indented, slightly grey class list ---------- */
+    .class-list {
+      list-style: none;
+      margin: 0.5rem 0 0;
+      padding-left: 1.25rem;
+      color: color-mix(in srgb, currentColor 72%, transparent);
+    }
+
+    .class-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .class-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ---------- Service roles: tight lines, indented description ---------- */
+    .role h2 {
+      margin-bottom: 0.15rem;
+    }
+
+    .role .entry-meta {
+      margin: 0 0 0.3rem;
+    }
+
+    .role .role-desc {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    /* ---------- Talks: more space between talks, indented venues ---------- */
+    .talk {
+      padding: 2rem 0;
+    }
+
+    .talk .presentation-venues {
+      margin-top: 0.5rem;
+      padding-left: 1.25rem;
+    }
+
     /* ---------- Two-column media panels ---------- */
     .media-grid {
       display: grid;
@@ -80,6 +120,27 @@
 
     .media-frame.poster:hover img {
       transform: scale(1.03);
+    }
+
+    /* Fallback shown if a poster image is missing */
+    .media-frame.poster {
+      position: relative;
+      text-decoration: none;
+    }
+
+    .media-frame.poster::before {
+      content: "View poster PDF ↗";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      opacity: 0.7;
+    }
+
+    .media-frame.poster img {
+      position: relative;
     }
 
     .media-card h2 {
@@ -164,7 +225,8 @@
              target="_blank" rel="noopener noreferrer">
             <img src="drone2.jpg"
                  alt="Drone view used in harbour porpoise research"
-                 loading="lazy">
+                 loading="lazy"
+                 onerror="this.style.display='none'">
           </a>
 
           <h2><em>Kampen för att rädda tumlaren</em></h2>
@@ -200,7 +262,7 @@
           School of Mathematics and Statistics · St Andrews, Scotland · 2025–2028
         </p>
 
-        <ul>
+        <ul class="class-list">
           <li>
             <strong>MT2508 Statistical Inference — Lead Demonstrator (2026):</strong>
             Facilitated examples classes of up to 50 students.
@@ -225,7 +287,7 @@
           Department of Biology · Lund, Sweden · 2023–2024
         </p>
 
-        <ul>
+        <ul class="class-list">
           <li>
             Taught drone methodology to Master's students, including piloting,
             safety, marine mammal focal follows and flight-path programming.
@@ -242,29 +304,29 @@
     <section class="page-section">
       <h1>Service Roles and Other</h1>
 
-      <article class="entry">
+      <article class="entry role">
         <h2>Conference Organisation ECS 2026</h2>
 
         <p class="entry-meta">Dundee, Scotland · 2026</p>
 
-        <p>
+        <p class="role-desc">
           Volunteering to help facilitate the European Cetacean Society
           Conference 2026 in Dundee.
         </p>
       </article>
 
-      <article class="entry">
+      <article class="entry role">
         <h2>Women in Ocean Science</h2>
 
         <p class="entry-meta">St Andrews, Scotland · 2025, 2026</p>
 
-        <p>
+        <p class="role-desc">
           Presenting at the outreach event 'Women in Ocean Science' at the
           Scottish Oceans Institute.
         </p>
       </article>
 
-      <article class="entry">
+      <article class="entry role">
         <h2>Seminar Organisation</h2>
 
         <p class="entry-meta">
@@ -272,15 +334,15 @@
           St Andrews, Scotland · 2025–2026
         </p>
 
-        <p>Seminar organisation and coordination.</p>
+        <p class="role-desc">Seminar organisation and coordination.</p>
       </article>
 
-      <article class="entry">
+      <article class="entry role">
         <h2>Seal Rehabilitation Norden-Norddeich</h2>
 
         <p class="entry-meta">Norden, Germany · 2021</p>
 
-        <p>
+        <p class="role-desc">
           Voluntary work in environmental education and outreach at a seal
           rehabilitation centre, including introducing visitors to seal
           rehabilitation, conservation and monitoring through public talks
@@ -320,7 +382,7 @@
     <section class="page-section">
       <h1>Talks and Seminars</h1>
 
-      <article class="entry">
+      <article class="entry talk">
         <h2>
           Behavioural Classification of Harbour Porpoise Acoustic
           Detections for Density Estimation
@@ -343,7 +405,7 @@
         </ul>
       </article>
 
-      <article class="entry">
+      <article class="entry talk">
         <h2>The Probability of Detecting Harbour Porpoise Echolocation Clicks</h2>
 
         <p class="entry-authors">
@@ -371,7 +433,7 @@
         </ul>
       </article>
 
-      <article class="entry">
+      <article class="entry talk">
         <h2>
           Spatio-temporal Distribution of Harbour Porpoises around
           Kullaberg Nature Reserve
@@ -412,7 +474,8 @@
              target="_blank" rel="noopener noreferrer">
             <img src="PosterECSDinahHartmannA0.jpg"
                  alt="Poster: The Probability of Detecting Harbour Porpoise Echolocation Clicks (ECS 2026)"
-                 loading="lazy">
+                 loading="lazy"
+                 onerror="this.style.display='none'">
           </a>
 
           <h2>The Probability of Detecting Harbour Porpoise Echolocation Clicks</h2>
@@ -445,7 +508,8 @@
              target="_blank" rel="noopener noreferrer">
             <img src="IBACPosterDinah.jpg"
                  alt="Poster: The Probability of Detecting Harbour Porpoise Echolocation Clicks (IBAC 2025)"
-                 loading="lazy">
+                 loading="lazy"
+                 onerror="this.style.display='none'">
           </a>
 
           <h2>The Probability of Detecting Harbour Porpoise Echolocation Clicks</h2>
@@ -478,7 +542,8 @@
              target="_blank" rel="noopener noreferrer">
             <img src="Stedtetal.2025_UAVTransectMonitoring.jpg"
                  alt="Poster: En Route to Standardisation: Porpoise Monitoring Using a Programmed UAV"
-                 loading="lazy">
+                 loading="lazy"
+                 onerror="this.style.display='none'">
           </a>
 
           <h2>En Route to Standardisation: Porpoise Monitoring Using a Programmed UAV</h2>
@@ -513,7 +578,8 @@
              target="_blank" rel="noopener noreferrer">
             <img src="PosterDinahHartmannA0.jpg"
                  alt="Poster: Harbour Porpoise Click Detection"
-                 loading="lazy">
+                 loading="lazy"
+                 onerror="this.style.display='none'">
           </a>
 
           <h2>Harbour Porpoise Click Detection</h2>
