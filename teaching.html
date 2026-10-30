@@ -6,9 +6,9 @@
   <title>Communication – Dinah Hartmann</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- Divider-line layout (overrides the boxed .glass-entry look).
-       Move this into style.css once you're happy with it. -->
+  <!-- Page-specific styles. Move into style.css once you're happy with them. -->
   <style>
+    /* ---------- Divider-line entries ---------- */
     .entry {
       background: none;
       border: none;
@@ -20,19 +20,82 @@
       padding: 1.25rem 0;
     }
 
-    /* Thin line between consecutive entries in a section */
     .entry + .entry {
       border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
     }
 
-.entry h2 {
-  font-size: 1.1rem;
-  line-height: 1.35;
-  margin: 0 0 0.4rem;
-}
+    .entry h2 {
+      font-size: 1.1rem;
+      line-height: 1.35;
+      margin: 0 0 0.4rem;
+    }
 
     .entry > :last-child {
       margin-bottom: 0;
+    }
+
+    /* ---------- Two-column media panels ---------- */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 700px) {
+      .media-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .media-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Media area: fills the top of the panel */
+    .media-frame {
+      display: block;
+      aspect-ratio: 4 / 3;
+      margin: 0 0 1rem;
+      border-radius: 10px;
+      overflow: hidden;
+      background: color-mix(in srgb, currentColor 8%, transparent);
+    }
+
+    .media-frame video,
+    .media-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Posters: show the top of the poster (title area) */
+    .media-frame.poster img {
+      object-position: top center;
+      transition: transform 0.3s ease;
+    }
+
+    .media-frame.poster:hover img {
+      transform: scale(1.03);
+    }
+
+    .media-card h2 {
+      font-size: 1.05rem;
+      line-height: 1.35;
+      margin: 0 0 0.4rem;
+    }
+
+    .media-card p {
+      margin: 0 0 0.5rem;
+    }
+
+    /* Push links to the bottom so panels line up */
+    .media-card .entry-links {
+      margin-top: auto;
+      padding-top: 0.5rem;
     }
   </style>
 </head>
@@ -61,45 +124,65 @@
     <section class="page-section">
       <h1>Outreach Highlights</h1>
 
-      <article class="entry">
-        <h2>Harbour Porpoise Drone Research on ARTE</h2>
+      <div class="media-grid">
 
-        <p>
-          TV documentary segment featuring harbour porpoise drone research
-          in <em>Night Trains – Von Berlin nach Stockholm</em>.
-        </p>
+        <!-- ARTE documentary -->
+        <article class="resource-card media-card">
+          <div class="resource-card-top">
+            <span class="resource-type">TV DOCUMENTARY</span>
+          </div>
 
-        <div class="video-container">
-          <video controls preload="metadata" width="100%">
-            <source src="ArteDrone.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
+          <div class="media-frame">
+            <video controls preload="metadata" playsinline>
+              <source src="ArteDrone.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
 
-        <div class="entry-links">
-          <a href="https://www.arte.tv/de/videos/113561-001-A/night-trains/"
+          <h2>Harbour Porpoise Drone Research on ARTE</h2>
+
+          <p>
+            Segment in <em>Night Trains – Von Berlin nach Stockholm</em>.
+          </p>
+
+          <div class="entry-links">
+            <a href="https://www.arte.tv/de/videos/113561-001-A/night-trains/"
+               target="_blank" rel="noopener noreferrer">
+              Watch full documentary ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- Sveriges Natur feature -->
+        <article class="resource-card media-card">
+          <div class="resource-card-top">
+            <span class="resource-type">MAGAZINE FEATURE</span>
+          </div>
+
+          <a class="media-frame"
+             href="https://www.sverigesnatur.org/aktuellt/kampen-for-att-radda-tumlaren/"
              target="_blank" rel="noopener noreferrer">
-            Watch full documentary ↗
+            <img src="drone2.jpg"
+                 alt="Drone view used in harbour porpoise research"
+                 loading="lazy">
           </a>
-        </div>
-      </article>
 
-      <article class="entry">
-        <h2>
-          Feature in Sweden's leading nature magazine:
-          <em>Kampen för att rädda tumlaren</em>
-        </h2>
+          <h2><em>Kampen för att rädda tumlaren</em></h2>
 
-        <div class="entry-links">
-          <a href="https://www.sverigesnatur.org/aktuellt/kampen-for-att-radda-tumlaren/"
-             target="_blank" rel="noopener noreferrer">
-            Read article ↗
-          </a>
-          <a href="SveNat.pdf" target="_blank" rel="noopener noreferrer">
-            Read PDF ↗
-          </a>
-        </div>
-      </article>
+          <p>Feature in <em>Sveriges Natur</em>, Sweden's leading nature magazine.</p>
+
+          <div class="entry-links">
+            <a href="https://www.sverigesnatur.org/aktuellt/kampen-for-att-radda-tumlaren/"
+               target="_blank" rel="noopener noreferrer">
+              Read article ↗
+            </a>
+            <a href="SveNat.pdf" target="_blank" rel="noopener noreferrer">
+              Read PDF ↗
+            </a>
+          </div>
+        </article>
+
+      </div>
     </section>
 
 
@@ -310,112 +393,153 @@
 
     <!-- =================================
          POSTERS
+         Thumbnails: save page 1 of each poster PDF as a .jpg
+         with the same name (e.g. PosterECSDinahHartmannA0.jpg)
          ================================= -->
 
     <section class="page-section">
       <h1>Posters</h1>
 
-      <article class="entry">
-        <h2>
-          The Probability of Detecting Harbour Porpoise Echolocation Clicks
-        </h2>
+      <div class="media-grid">
 
-        <p class="entry-authors">
-          Hartmann, D., Macaulay, J. D. J., Tyack, P., Rojano-Doñate, L.,
-          Teglberg-Madsen, P., Teilmann, J., Siebert, U. &amp; Thomas, L.
-        </p>
+        <!-- ECS 2026 -->
+        <article class="resource-card media-card">
+          <div class="resource-card-top">
+            <span class="resource-type">POSTER · APRIL 2026</span>
+          </div>
 
-        <p class="entry-meta">
-          European Cetacean Society · April 2026 ·
-          Dundee, Scotland
-        </p>
-
-        <div class="entry-links">
-          <a href="https://www.researchgate.net/publication/407465973_Harbour_porpoise_Phocoena_phocoena_click_detectability_estimates_depend_on_behaviour_and_detection-classification_method"
+          <a class="media-frame poster" href="PosterECSDinahHartmannA0.pdf"
              target="_blank" rel="noopener noreferrer">
-            View citation ↗
+            <img src="PosterECSDinahHartmannA0.jpg"
+                 alt="Poster: The Probability of Detecting Harbour Porpoise Echolocation Clicks (ECS 2026)"
+                 loading="lazy">
           </a>
-          <a href="PosterECSDinahHartmannA0.pdf" target="_blank" rel="noopener noreferrer">
-            View poster PDF ↗
-          </a>
-        </div>
-      </article>
 
-      <article class="entry">
-        <h2>
-          The Probability of Detecting Harbour Porpoise Echolocation Clicks
-        </h2>
+          <h2>The Probability of Detecting Harbour Porpoise Echolocation Clicks</h2>
 
-        <p class="entry-authors">
-          Hartmann, D., Macaulay, J. D. J., Tyack, P., Rojano-Doñate, L.,
-          Teglberg-Madsen, P., Teilmann, J., Siebert, U. &amp; Thomas, L.
-        </p>
+          <p class="entry-authors">
+            Hartmann, D., Macaulay, J. D. J., Tyack, P., Rojano-Doñate, L.,
+            Teglberg-Madsen, P., Teilmann, J., Siebert, U. &amp; Thomas, L.
+          </p>
 
-        <p class="entry-meta">
-          International Bioacoustics Congress · September 2025 ·
-          Kerteminde, Denmark
-        </p>
+          <p class="entry-meta">European Cetacean Society · Dundee, Scotland</p>
 
-        <div class="entry-links">
-          <a href="https://www.researchgate.net/publication/407466289_Harbour_porpoise_click_detection_probability_depends_on_behaviour_and_detection-classification_method"
+          <div class="entry-links">
+            <a href="https://www.researchgate.net/publication/407465973_Harbour_porpoise_Phocoena_phocoena_click_detectability_estimates_depend_on_behaviour_and_detection-classification_method"
+               target="_blank" rel="noopener noreferrer">
+              View citation ↗
+            </a>
+            <a href="PosterECSDinahHartmannA0.pdf" target="_blank" rel="noopener noreferrer">
+              View poster PDF ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- IBAC 2025 -->
+        <article class="resource-card media-card">
+          <div class="resource-card-top">
+            <span class="resource-type">POSTER · SEPTEMBER 2025</span>
+          </div>
+
+          <a class="media-frame poster" href="IBACPosterDinah.pdf"
              target="_blank" rel="noopener noreferrer">
-            View citation ↗
+            <img src="IBACPosterDinah.jpg"
+                 alt="Poster: The Probability of Detecting Harbour Porpoise Echolocation Clicks (IBAC 2025)"
+                 loading="lazy">
           </a>
-          <a href="IBACPosterDinah.pdf" target="_blank" rel="noopener noreferrer">
-            View poster PDF ↗
-          </a>
-        </div>
-      </article>
 
-      <article class="entry">
-        <h2>
-          En Route to Standardisation: Porpoise Monitoring Using a Programmed UAV
-        </h2>
+          <h2>The Probability of Detecting Harbour Porpoise Echolocation Clicks</h2>
 
-        <p class="entry-authors">
-          Hartmann, D., Palmqvist, V. &amp; Stedt, J.
-        </p>
+          <p class="entry-authors">
+            Hartmann, D., Macaulay, J. D. J., Tyack, P., Rojano-Doñate, L.,
+            Teglberg-Madsen, P., Teilmann, J., Siebert, U. &amp; Thomas, L.
+          </p>
 
-        <p class="entry-meta">
-          European Cetacean Society 36th Conference · May 2025 ·
-          Ponta Delgada, Azores, Portugal
-        </p>
+          <p class="entry-meta">International Bioacoustics Congress · Kerteminde, Denmark</p>
 
-        <div class="entry-links">
-          <a href="https://www.researchgate.net/publication/392117052_En_route_to_standardisation_Porpoise_monitoring_using_a_programmed_UAV"
+          <div class="entry-links">
+            <a href="https://www.researchgate.net/publication/407466289_Harbour_porpoise_click_detection_probability_depends_on_behaviour_and_detection-classification_method"
+               target="_blank" rel="noopener noreferrer">
+              View citation ↗
+            </a>
+            <a href="IBACPosterDinah.pdf" target="_blank" rel="noopener noreferrer">
+              View poster PDF ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- ECS 2025 -->
+        <article class="resource-card media-card">
+          <div class="resource-card-top">
+            <span class="resource-type">POSTER · MAY 2025</span>
+          </div>
+
+          <a class="media-frame poster" href="Stedtetal.2025_UAVTransectMonitoring.pdf"
              target="_blank" rel="noopener noreferrer">
-            View citation ↗
+            <img src="Stedtetal.2025_UAVTransectMonitoring.jpg"
+                 alt="Poster: En Route to Standardisation: Porpoise Monitoring Using a Programmed UAV"
+                 loading="lazy">
           </a>
-          <a href="Stedtetal.2025_UAVTransectMonitoring.pdf"
+
+          <h2>En Route to Standardisation: Porpoise Monitoring Using a Programmed UAV</h2>
+
+          <p class="entry-authors">
+            Hartmann, D., Palmqvist, V. &amp; Stedt, J.
+          </p>
+
+          <p class="entry-meta">
+            European Cetacean Society 36th Conference · Ponta Delgada, Azores, Portugal
+          </p>
+
+          <div class="entry-links">
+            <a href="https://www.researchgate.net/publication/392117052_En_route_to_standardisation_Porpoise_monitoring_using_a_programmed_UAV"
+               target="_blank" rel="noopener noreferrer">
+              View citation ↗
+            </a>
+            <a href="Stedtetal.2025_UAVTransectMonitoring.pdf"
+               target="_blank" rel="noopener noreferrer">
+              View poster PDF ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- UK & Ireland student conference 2025 -->
+        <article class="resource-card media-card">
+          <div class="resource-card-top">
+            <span class="resource-type">POSTER · JANUARY 2025</span>
+          </div>
+
+          <a class="media-frame poster" href="PosterDinahHartmannA0.pdf"
              target="_blank" rel="noopener noreferrer">
-            View poster PDF ↗
+            <img src="PosterDinahHartmannA0.jpg"
+                 alt="Poster: Harbour Porpoise Click Detection"
+                 loading="lazy">
           </a>
-        </div>
-      </article>
 
-      <article class="entry">
-        <h2>Harbour Porpoise Click Detection</h2>
+          <h2>Harbour Porpoise Click Detection</h2>
 
-        <p class="entry-authors">
-          Hartmann, D., Macaulay, J. D. J., Tyack, P. &amp; Thomas, L.
-        </p>
+          <p class="entry-authors">
+            Hartmann, D., Macaulay, J. D. J., Tyack, P. &amp; Thomas, L.
+          </p>
 
-        <p class="entry-meta">
-          UK and Ireland Regional Student Chapter for Marine Mammalogy
-          Student Conference · January 2025 · St Andrews, Scotland
-        </p>
+          <p class="entry-meta">
+            UK and Ireland Regional Student Chapter for Marine Mammalogy
+            Student Conference · St Andrews, Scotland
+          </p>
 
-        <div class="entry-links">
-          <a href="https://www.researchgate.net/publication/407466099_How_to_convert_click_detections_into_density_with_varying_behaviour_environment_and_detector_performance"
-             target="_blank" rel="noopener noreferrer">
-            View citation ↗
-          </a>
-          <a href="PosterDinahHartmannA0.pdf"
-             target="_blank" rel="noopener noreferrer">
-            View poster PDF ↗
-          </a>
-        </div>
-      </article>
+          <div class="entry-links">
+            <a href="https://www.researchgate.net/publication/407466099_How_to_convert_click_detections_into_density_with_varying_behaviour_environment_and_detector_performance"
+               target="_blank" rel="noopener noreferrer">
+              View citation ↗
+            </a>
+            <a href="PosterDinahHartmannA0.pdf"
+               target="_blank" rel="noopener noreferrer">
+              View poster PDF ↗
+            </a>
+          </div>
+        </article>
+
+      </div>
     </section>
 
 
