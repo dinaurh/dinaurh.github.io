@@ -1290,3 +1290,27 @@ header.banner img {
   }
 }
 
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  align-items: baseline;
+  column-gap: 0.5rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 10%, transparent);
+  line-height: 1.5;
+}
+
+.cv-entry h3,
+.cv-entry p:not(.cv-meta) {
+  grid-column: 1;
+  min-width: 0;
+}
+
+.cv-meta {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  text-align: right;
+  white-space: nowrap;
+}
