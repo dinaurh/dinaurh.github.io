@@ -1314,3 +1314,16 @@ header.banner img {
   text-align: right;
   white-space: nowrap;
 }
+.cv-meta {
+  white-space: nowrap !important;
+  justify-self: end;
+  text-align: right;
+  min-width: max-content;
+}
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  align-items: baseline;
+  column-gap: 0.75rem;
+}
