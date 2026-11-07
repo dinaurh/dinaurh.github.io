@@ -1092,8 +1092,9 @@ header.banner img {
 }
 
 
+
 /* =================================
-   MINI CV
+   COMPACT MINI CV
    ================================= */
 
 .mini-cv {
@@ -1105,20 +1106,25 @@ header.banner img {
 }
 
 .cv-section {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .cv-section > h2 {
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   line-height: 1.35;
   margin: 0 0 0.5rem;
-  padding-bottom: 0.7rem;
+  padding-bottom: 0.55rem;
   border-bottom: 1px solid color-mix(in srgb, currentColor 25%, transparent);
 }
 
 .cv-entry {
-  padding: 0.85rem 0;
-  border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.35rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 10%, transparent);
+  line-height: 1.5;
 }
 
 .cv-entry:last-child {
@@ -1126,26 +1132,34 @@ header.banner img {
 }
 
 .cv-entry h3 {
-  font-size: 1rem;
-  line-height: 1.4;
+  display: inline;
+  font-size: 0.95rem;
   font-weight: 600;
-  margin: 0 0 0.2rem;
+  line-height: inherit;
+  margin: 0;
 }
 
 .cv-entry p {
+  display: inline;
+  font-size: 0.92rem;
   margin: 0;
-  font-size: 0.94rem;
 }
 
 .cv-meta {
-  color: color-mix(in srgb, currentColor 65%, transparent);
+  color: color-mix(in srgb, currentColor 60%, transparent);
   font-size: 0.9rem !important;
 }
 
+.cv-meta::before {
+  content: "·";
+  margin-right: 0.35rem;
+}
+
 .cv-publication {
-  padding: 1rem 0;
-  border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent);
-  line-height: 1.65;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 10%, transparent);
+  font-size: 0.92rem;
+  line-height: 1.6;
 }
 
 .cv-publication:last-child {
@@ -1159,13 +1173,14 @@ header.banner img {
 .cv-skills-list {
   list-style: none;
   padding: 0;
-  margin: 0.75rem 0 0;
+  margin: 0;
 }
 
 .cv-skills-list li {
   padding: 0.55rem 0;
-  border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent);
-  line-height: 1.55;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 10%, transparent);
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 .cv-skills-list li:last-child {
@@ -1176,18 +1191,33 @@ header.banner img {
   font-weight: 600;
 }
 
-/* Mini CV responsive adjustments */
+/* Nested training entries */
+.cv-training {
+  margin: 0.4rem 0 0 1.25rem;
+  padding: 0;
+  list-style: disc;
+}
+
+.cv-training li {
+  border: none;
+  padding: 0.2rem 0;
+}
+
+/* Publications can wrap naturally */
+.cv-publication em {
+  font-style: italic;
+}
+
 @media (max-width: 600px) {
   .mini-cv {
     margin-top: 2rem;
   }
 
   .cv-section {
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
   }
 
   .cv-entry {
-    padding: 0.75rem 0;
+    gap: 0.1rem 0.3rem;
   }
 }
-
