@@ -1269,3 +1269,20 @@ header.banner img {
 .cv-entry p:not(.cv-meta) {
   grid-column: 1;
 }
+@media (max-width: 600px) {
+  .cv-entry {
+    column-gap: 0.5rem;
+  }
+
+  .cv-entry h3,
+  .cv-entry p:not(.cv-meta) {
+    grid-column: 1 / -1;
+  }
+
+  .cv-meta {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    justify-self: start;
+    text-align: left;
+  }
+}
