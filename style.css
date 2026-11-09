@@ -1291,7 +1291,10 @@ header.banner img {
     transition: none;
   }
 }
-
-.separator {
+.cv-entry h3 {
   font-weight: normal;
+}
+
+.cv-entry h3 strong {
+  font-weight: bold;
 }
