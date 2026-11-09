@@ -1291,3 +1291,7 @@ header.banner img {
     transition: none;
   }
 }
+
+.separator {
+  font-weight: normal;
+}
