@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Communication – Dinah Hartmann</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Randomly pick a banner set on each page load -->
+  <script>
+    if (Math.random() < 0.5) document.documentElement.classList.add('snork');
+  </script>
 
   <!-- Page-specific styles. Move into style.css once you're happy with them. -->
   <style>
@@ -166,6 +170,11 @@
   <!-- Banner -->
   <header class="banner">
     <img src="banner.jpg" alt="Banner image">
+    <script>
+      if (document.documentElement.classList.contains('snork')) {
+        document.currentScript.previousElementSibling.src = 'BannerSnork.jpg';
+      }
+    </script>
   </header>
 
   <!-- Sticky navigation -->

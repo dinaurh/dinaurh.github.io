@@ -1298,3 +1298,13 @@ header.banner img {
 .cv-entry h3 strong {
   font-weight: bold;
 }
+
+
+/* ========================================
+   ALTERNATIVE "SNORK" BANNER SET
+   The <html> element gets the class "snork" at random
+   (see the small script in each page's <head>).
+   ======================================== */
+.snork .site-nav {
+  background-image: url("BannerGradSnork.png");
+}

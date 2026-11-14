@@ -5,12 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dinah Hartmann</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Randomly pick a banner set on each page load -->
+  <script>
+    if (Math.random() < 0.5) document.documentElement.classList.add('snork');
+  </script>
 </head>
 <body>
 <a id="top"></a>
 
 <header class="banner">
   <img src="banner.jpg" alt="Banner image">
+    <script>
+      if (document.documentElement.classList.contains('snork')) {
+        document.currentScript.previousElementSibling.src = 'BannerSnork.jpg';
+      }
+    </script>
 </header>
 
 <nav class="site-nav" aria-label="Main navigation">

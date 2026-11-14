@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Publications – Dinah Hartmann</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Randomly pick a banner set on each page load -->
+  <script>
+    if (Math.random() < 0.5) document.documentElement.classList.add('snork');
+  </script>
 
   <!-- Divider-line layout (overrides the boxed .glass-entry look).
        Same rules as teaching.html; move into style.css once you're happy. -->
@@ -64,6 +68,11 @@
   <!-- Banner -->
   <header class="banner">
     <img src="banner.jpg" alt="Banner image">
+    <script>
+      if (document.documentElement.classList.contains('snork')) {
+        document.currentScript.previousElementSibling.src = 'BannerSnork.jpg';
+      }
+    </script>
   </header>
 
   <!-- Sticky navigation -->
