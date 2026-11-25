@@ -162,6 +162,63 @@
       margin-top: auto;
       padding-top: 0.5rem;
     }
+
+    /* ---------- Left-hand "On this page" menu ----------
+       Same rules as index.html, publications.html and talks.html */
+    .content {
+      position: relative;      /* anchor for the side menu */
+    }
+
+    .page-toc {
+      position: absolute;
+      top: 2.5rem;             /* line up with the first heading */
+      bottom: 0;
+      right: 100%;             /* sits in the empty space left of the content */
+      width: 10rem;
+      margin-right: 1.5rem;
+    }
+
+    .page-toc nav {
+      position: sticky;
+      /* just below the sticky site nav (its height scales with the window) */
+      top: calc(100vw * 123 / 2809 + 1.75rem);
+      font-size: 0.8rem;
+      line-height: 1.35;
+    }
+
+    .page-toc .toc-label {
+      margin: 0 0 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+
+    .page-toc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 0 0.75rem;
+      border-left: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+    }
+
+    .page-toc li + li {
+      margin-top: 0.55rem;
+    }
+
+    .page-toc a {
+      color: #c5c9d8;
+      text-decoration: none;
+    }
+
+    .page-toc a:hover {
+      color: #ffffff;
+    }
+
+    /* Not enough room left of the 840px column: hide the side menu */
+    @media (max-width: 1260px) {
+      .page-toc { display: none; }
+    }
   </style>
 </head>
 
@@ -187,11 +244,26 @@
 
   <main class="content">
 
+    <!-- Left-hand section links -->
+    <aside class="page-toc">
+      <nav aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li><a href="#outreach">Outreach Highlights</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#service">Service Roles and Volunteering</a></li>
+          <li><a href="#workshops">Workshops</a></li>
+          <li><a href="#talks">Talks and Seminars</a></li>
+          <li><a href="#posters">Posters</a></li>
+        </ul>
+      </nav>
+    </aside>
+
     <!-- =================================
          OUTREACH HIGHLIGHTS
          ================================= -->
 
-    <section class="page-section">
+    <section class="page-section" id="outreach">
       <h1>Outreach Highlights</h1>
 
       <div class="media-grid">
@@ -261,7 +333,7 @@
          TEACHING
          ================================= -->
 
-    <section class="page-section">
+    <section class="page-section" id="teaching">
       <h1>Teaching</h1>
 
       <article class="entry">
@@ -310,7 +382,7 @@
          SERVICE ROLES AND OTHER
          ================================= -->
 
-    <section class="page-section">
+    <section class="page-section" id="service">
       <h1>Service Roles and Volunteering</h1>
 
       <article class="entry role">
@@ -365,7 +437,7 @@
          WORKSHOPS
          ================================= -->
 
-    <section class="page-section">
+    <section class="page-section" id="workshops">
       <h1>Workshops</h1>
 
       <div class="media-grid">
@@ -398,7 +470,7 @@
     View workshop resources ↗
   </a>
 </div>
-          
+
         </article>
 
       </div>
@@ -409,7 +481,7 @@
          TALKS AND SEMINARS
          ================================= -->
 
-    <section class="page-section">
+    <section class="page-section" id="talks">
       <h1>Talks and Seminars</h1>
 
       <article class="entry talk">
@@ -508,7 +580,7 @@
          with the same name (e.g. PosterECSDinahHartmannA0.jpg)
          ================================= -->
 
-    <section class="page-section">
+    <section class="page-section" id="posters">
       <h1>Posters</h1>
 
       <div class="media-grid">
