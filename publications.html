@@ -10,55 +10,131 @@
     if (Math.random() < 0.5) document.documentElement.classList.add('snork');
   </script>
 
-  <!-- Divider-line layout (overrides the boxed .glass-entry look).
-       Same rules as teaching.html; move into style.css once you're happy. -->
+  <!-- Compact citation layout + left-hand section links.
+       Move into style.css once you're happy. -->
   <style>
-    .entry {
-      background: none;
-      border: none;
-      border-radius: 0;
-      box-shadow: none;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
-      margin: 0;
-      padding: 1.25rem 0;
+    /* ---------- Overall size ---------- */
+    .content {
+      position: relative;      /* anchor for the side menu */
+      font-size: 0.9rem;
+      line-height: 1.5;
     }
 
-    /* Thin line between consecutive entries in a section */
-    .entry + .entry {
-      border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+    /* ---------- Sections ---------- */
+    .page-section {
+      margin: 0 0 2rem;
+      scroll-margin-top: 5rem; /* don't hide headings under the sticky nav */
     }
 
-    /* Entry titles: small sub-headings */
-    .entry h2,
-    .entry h3 {
-      font-size: 1.1rem;
-      line-height: 1.35;
-      margin: 0 0 0.4rem;
-    }
-
-    .entry > :last-child {
-      margin-bottom: 0;
-    }
-
-    /* Section heading with a divider underneath;
-       profile links sit to the right of the heading */
+    /* Divider only under each section heading */
     .section-header {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      align-items: baseline;
       justify-content: space-between;
-      gap: 0.5rem 1.5rem;
-      padding-bottom: 0.6rem;
+      gap: 0.25rem 1.5rem;
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.75rem;
       border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
     }
 
     .section-header h1 {
       margin: 0;
+      font-size: 1.3rem;
+      line-height: 1.3;
     }
 
     .section-header .profile-links {
       margin: 0;
+      font-size: 0.85rem;
+    }
+
+    .section-header .profile-links a + a {
+      margin-left: 0.75rem;
+    }
+
+    /* ---------- Citations: one flowing paragraph each ---------- */
+    .pub-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .pub-list li {
+      margin: 0 0 0.7rem;
+      padding-left: 1.25rem;
+      text-indent: -1.25rem;   /* hanging indent */
+    }
+
+    .pub-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .pub-title {
+      font-weight: 600;
+    }
+
+    .pub-links {
+      white-space: nowrap;
+      font-size: 0.85em;
+    }
+
+    .pub-links a {
+      margin-left: 0.4rem;
+    }
+
+    /* ---------- Left-hand "On this page" menu ---------- */
+    .page-toc {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 100%;             /* sits in the empty space left of the content */
+      width: 11rem;
+      margin-right: 2.5rem;
+    }
+
+    .page-toc nav {
+      position: sticky;
+      top: 5rem;               /* below the sticky site nav */
+      font-size: 0.8rem;
+      line-height: 1.35;
+    }
+
+    .page-toc .toc-label {
+      margin: 0 0 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+
+    .page-toc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 0 0.75rem;
+      border-left: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+    }
+
+    .page-toc li + li {
+      margin-top: 0.55rem;
+    }
+
+    .page-toc a {
+      text-decoration: none;
+    }
+
+    .page-toc a:hover {
+      text-decoration: underline;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Not enough room on the left: hide the side menu */
+    @media (max-width: 1200px) {
+      .page-toc { display: none; }
     }
   </style>
 </head>
@@ -87,199 +163,123 @@
 
   <main class="content">
 
+    <!-- Left-hand section links -->
+    <aside class="page-toc">
+      <nav aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li><a href="#journal-articles">Peer-reviewed journal articles</a></li>
+          <li><a href="#submitted">Submitted and preprints</a></li>
+          <li><a href="#other">Conference papers, reports, theses and other</a></li>
+        </ul>
+      </nav>
+    </aside>
+
     <!-- =================================
-         PUBLICATIONS
+         PEER-REVIEWED JOURNAL ARTICLES
          ================================= -->
 
-    <section class="page-section">
+    <section class="page-section" id="journal-articles">
       <div class="section-header">
         <h1>Peer-reviewed journal articles</h1>
 
         <div class="entry-links profile-links">
           <a href="https://www.researchgate.net/profile/Dinah-Hartmann?ev=hdr_xprf"
-             target="_blank"
-             rel="noopener noreferrer">
-            ResearchGate ↗
-          </a>
-
+             target="_blank" rel="noopener noreferrer">ResearchGate ↗</a>
           <a href="https://orcid.org/0009-0005-0654-8477"
-             target="_blank"
-             rel="noopener noreferrer">
-            ORCID ↗
-          </a>
-
+             target="_blank" rel="noopener noreferrer">ORCID ↗</a>
           <a href="https://scholar.google.com/citations?user=1W9_pBoAAAAJ&amp;hl=en&amp;authuser=1"
-             target="_blank"
-             rel="noopener noreferrer">
-            Google Scholar ↗
-          </a>
+             target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
         </div>
       </div>
 
-      <article class="entry">
-        <h3>
-Acoustic detection probability of harbour porpoises depends on behaviour,
-detection unit and click-train classification. 
-        </h3>
-
-        <p class="entry-authors">
+      <ul class="pub-list">
+        <li>
           Hartmann, D., J.D.J. Macaulay, L. Rojano-Doñate, J. Teilmann, S.L. Elmegaard, P.T. Madsen, U. Siebert,
-P. Tyack and L. Thomas. 2026.
-        </p>
+          P. Tyack and L. Thomas. 2026.
+          <span class="pub-title">Acoustic detection probability of harbour porpoises depends on behaviour,
+          detection unit and click-train classification.</span>
+          <em>Journal of the Acoustical Society America</em>.
+          <span class="pub-links">
+            <a href="https://doi.org/10.1121/10.0047478" target="_blank" rel="noopener noreferrer">Article ↗</a>
+            <a href="4122_1_10.0047478.pdf" target="_blank" rel="noopener noreferrer">PDF ↗</a>
+          </span>
+        </li>
 
-        <p class="entry-meta">
-          <em>Journal of the Acoustical Society America</em>
-        </p>
-
-        <div class="entry-links">
-          <a href="https://doi.org/10.1121/10.0047478"
-             target="_blank"
-             rel="noopener noreferrer">
-            Read article ↗
-          </a>
-
-          <a href="4122_1_10.0047478.pdf"
-             target="_blank"
-             rel="noopener noreferrer">
-            Read PDF ↗
-          </a>
-        </div>
-      </article>
-
-            <article class="entry">
-        <h3>
-          Programmed unmanned aerial vehicles show great potential for
-          monitoring marine megafauna in specific areas of interest
-        </h3>
-
-        <p class="entry-authors">
+        <li>
           Hartmann, D., V. Palmqvist and J. Stedt. 2025.
-        </p>
-
-        <p class="entry-meta">
-          <em>Remote Sensing in Ecology and Conservation</em>
-        </p>
-
-        <div class="entry-links">
-          <a href="https://doi.org/10.1002/rse2.70043"
-             target="_blank"
-             rel="noopener noreferrer">
-            Read article ↗
-          </a>
-
-          <a href="Hartmann2025Prog.pdf"
-             target="_blank"
-             rel="noopener noreferrer">
-            Read PDF ↗
-          </a>
-        </div>
-      </article>
+          <span class="pub-title">Programmed unmanned aerial vehicles show great potential for
+          monitoring marine megafauna in specific areas of interest.</span>
+          <em>Remote Sensing in Ecology and Conservation</em>.
+          <span class="pub-links">
+            <a href="https://doi.org/10.1002/rse2.70043" target="_blank" rel="noopener noreferrer">Article ↗</a>
+            <a href="Hartmann2025Prog.pdf" target="_blank" rel="noopener noreferrer">PDF ↗</a>
+          </span>
+        </li>
+      </ul>
     </section>
 
     <!-- =================================
          SUBMITTED AND PREPRINTS
          ================================= -->
 
-    <section class="page-section">
+    <section class="page-section" id="submitted">
       <div class="section-header">
         <h1>Submitted and preprints</h1>
       </div>
 
-      <article class="entry">
-        <h3>
-          A harmonized large-scale longitudinal dataset of harbor porpoise
-          detections in Danish waters using VALKYRIE
-        </h3>
-
-        <p class="entry-authors">
+      <ul class="pub-list">
+        <li>
           Kronberg Nielsen, M. L., Jacobs, E. R., E. Debusschere, S. Vermaere,
           S. Sveegard, D. Hartmann, J. Tougaard and E. T. Griffiths. 2026.
-        </p>
-
-        <p class="entry-meta">
-          <em>In review at Scientific Data</em>
-        </p>
-      </article>
+          <span class="pub-title">A harmonized large-scale longitudinal dataset of harbor porpoise
+          detections in Danish waters using VALKYRIE.</span>
+          <em>In review at Scientific Data</em>.
+        </li>
+      </ul>
     </section>
+
     <!-- =================================
-         THESES
+         CONFERENCE PAPERS, REPORTS, THESES AND OTHER
          ================================= -->
-    <section class="page-section">
+
+    <section class="page-section" id="other">
       <div class="section-header">
         <h1>Conference papers, reports, theses and other</h1>
       </div>
 
-      <article class="entry">
-        <h3>
-          From monitoring to conservation: linking acoustic biodiversity data with soundscape data
-        </h3>
+      <ul class="pub-list">
+        <li>
+          Jacobs, E., M. L., Kroberg Nielsen, E. T. Griffiths, E. Debusschere, D. Hartmann, L. Thomas, P. Tyack
+          and J. Tougaard. 2024.
+          <span class="pub-title">From monitoring to conservation: linking acoustic biodiversity data with
+          soundscape data.</span>
+          Conference summary, Ocean Noise 2026, Barcelona.
+          <span class="pub-links">
+            <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=1W9_pBoAAAAJ&amp;authuser=1&amp;citation_for_view=1W9_pBoAAAAJ:2osOgNQ5qMEC"
+               target="_blank" rel="noopener noreferrer">Article ↗</a>
+            <a href="OceanNoise.pdf" target="_blank" rel="noopener noreferrer">PDF ↗</a>
+          </span>
+        </li>
 
-        <p class="entry-authors">
-           Jacobs, E., M. L., Kroberg Nielsen, E. T. Griffiths, E. Debusschere, D. Hartmann, L. Thomas, P. Tyack and J. Tougaard. 2024.
-        </p>
-
-        <p class="entry-meta">
-          Conference summary · Ocean Noise 2026 · Barcelona
-        </p>
-
-         <div class="entry-links">
-          <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1W9_pBoAAAAJ&authuser=1&citation_for_view=1W9_pBoAAAAJ:2osOgNQ5qMEC"
-             target="_blank"
-             rel="noopener noreferrer">
-            Read article ↗
-          </a>
-
-          <a href="OceanNoise.pdf"
-             target="_blank"
-             rel="noopener noreferrer">
-            Read PDF ↗
-          </a>
-        </div>
-      </article>
-    <section class="page-section">
-      <div class="section-header">
-        <h1>Conference papers, reports, theses and other</h1>
-      </div>
-
-      <article class="entry">
-        <h3>
-          Drivers of the small-scale spatio-temporal distribution of
-          harbour porpoises (<em>Phocoena phocoena</em>) investigated
-          via UAV around Kullaberg, Sweden
-        </h3>
-
-        <p class="entry-authors">
+        <li>
           Hartmann, D., J. Stedt and P. Carlsson. 2024.
-        </p>
+          <span class="pub-title">Drivers of the small-scale spatio-temporal distribution of
+          harbour porpoises (<em>Phocoena phocoena</em>) investigated via UAV around Kullaberg, Sweden.</span>
+          Master's thesis, Department of Biology, Lund University.
+          <span class="pub-links">
+            <a href="https://www.lunduniversity.lu.se/lup/publication/9153945"
+               target="_blank" rel="noopener noreferrer">Repository ↗</a>
+          </span>
+        </li>
 
-        <p class="entry-meta">
-          Master's thesis · Department of Biology · Lund University
-        </p>
-
-        <div class="entry-links">
-          <a href="https://www.lunduniversity.lu.se/lup/publication/9153945"
-             target="_blank"
-             rel="noopener noreferrer">
-            View university repository ↗
-          </a>
-        </div>
-      </article>
-
-      <article class="entry">
-        <h3>
-          The effects of drought on soil community dynamics in different
-          management systems in Scottish grassland fields
-        </h3>
-
-        <p class="entry-authors">
+        <li>
           Hartmann, D. and T. Caruso. 2022.
-        </p>
-
-        <p class="entry-meta">
-          Bachelor's thesis · School of Biology and Environmental Science ·
-          University College Dublin
-        </p>
-      </article>
+          <span class="pub-title">The effects of drought on soil community dynamics in different
+          management systems in Scottish grassland fields.</span>
+          Bachelor's thesis, School of Biology and Environmental Science, University College Dublin.
+        </li>
+      </ul>
     </section>
 
 
