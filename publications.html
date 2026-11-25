@@ -22,8 +22,7 @@
 
     /* ---------- Sections ---------- */
     .page-section {
-      margin: 0 0 2rem;
-      scroll-margin-top: 5rem; /* don't hide headings under the sticky nav */
+      margin: 0 0 2.25rem;
     }
 
     /* Divider only under each section heading */
@@ -46,11 +45,13 @@
 
     .section-header .profile-links {
       margin: 0;
-      font-size: 0.85rem;
+      gap: 8px;
     }
 
-    .section-header .profile-links a + a {
-      margin-left: 0.75rem;
+    .section-header .profile-links a {
+      padding: 5px 10px;
+      font-size: 0.7rem;
+      border-radius: 9px;
     }
 
     /* ---------- Citations: one flowing paragraph each ---------- */
@@ -74,28 +75,52 @@
       font-weight: 600;
     }
 
-    .pub-links {
+    /* Plain inline text links (overrides the boxed .pub-links buttons in style.css) */
+    .pub-list .pub-links {
       white-space: nowrap;
-      font-size: 0.85em;
     }
 
-    .pub-links a {
-      margin-left: 0.4rem;
+    .pub-list .pub-links a {
+      display: inline;
+      margin: 0 0 0 0.45rem;
+      padding: 0;
+      background: none;
+      border: none;
+      border-radius: 0;
+      color: #a9c7ff;
+      font-size: 0.85em;
+      text-decoration: none;
+    }
+
+    .pub-list .pub-links a:hover {
+      color: #d3e2ff;
+      background: none;
+      text-decoration: underline;
+    }
+
+    /* Authors slightly softer than the title */
+    .pub-list li {
+      color: #d9dceb;
+    }
+
+    .pub-title {
+      color: #ffffff;
     }
 
     /* ---------- Left-hand "On this page" menu ---------- */
     .page-toc {
       position: absolute;
-      top: 0;
+      top: 2.5rem;             /* line up with the first heading */
       bottom: 0;
-      right: 100%;             /* sits in the empty space left of the content */
-      width: 11rem;
-      margin-right: 2.5rem;
+      right: 100%;            /* sits in the empty space left of the content */
+      width: 10rem;
+      margin-right: 1.5rem;
     }
 
     .page-toc nav {
       position: sticky;
-      top: 5rem;               /* below the sticky site nav */
+      /* just below the sticky site nav (its height scales with the window) */
+      top: calc(100vw * 123 / 2809 + 1.75rem);
       font-size: 0.8rem;
       line-height: 1.35;
     }
@@ -121,19 +146,16 @@
     }
 
     .page-toc a {
+      color: #c5c9d8;
       text-decoration: none;
     }
 
     .page-toc a:hover {
-      text-decoration: underline;
+      color: #ffffff;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Not enough room on the left: hide the side menu */
-    @media (max-width: 1200px) {
+    /* Not enough room left of the 840px column: hide the side menu */
+    @media (max-width: 1260px) {
       .page-toc { display: none; }
     }
   </style>
